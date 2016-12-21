@@ -316,18 +316,11 @@ div.artist-gallery figure {
 }
 
 .carousel-control.right{
-  background: none;
   margin-right: 9%;
 }
-.carousel-control.left{
-  background: none;
-  margin-left: 9%;
-}
 
-.modal-header{
-  padding: 20px;
-  padding-bottom: 7px;
-  padding-bottom: 7px;
+.carousel-control.left{
+  margin-left: 9%;
 }
 
 .artist-contact{
@@ -349,8 +342,9 @@ div.artist-gallery figure {
   font-size: 22px;
 }
 
-.artist_post > img{
-  border: 8px solid #ffffff;;
+.artist_post_content img {
+  border: 8px solid #ffffff;
+  margin-bottom: 10px;
 }
 
 .artist_post_content {
@@ -511,14 +505,17 @@ div.artist-gallery figure {
       <div class="modal-body artist_modal" style="padding:20px">
         <div class="row">
           <div class="col-md-6 artist-gallery col-md-push-6">
-            <div class="art-gal-itself"></div>
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_left.png"/>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-              <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_right.png"/>
-            </a>
+            <div class="art-gal-container">
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_left.png"/>
+              </a>
+              <div class="art-gal-itself"></div>
+              <div class="art-gal-dots"></div>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_right.png"/>
+              </a>
+            </div>
+            <div class="art-gal-description"></div>
           </div>
           <div class="col-md-6 artist-info col-md-pull-6">
             <h3 class="artist-name">
