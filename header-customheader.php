@@ -610,7 +610,6 @@ $body_classes[] = 'mobile-menu-design-' . $smof_data['mobile_menu_design'];
 		is_page_template('blank.php') ||
 		is_page_template('100-width.php') ||
 		get_post_meta($slider_page_id, 'pyre_portfolio_width_100', true) == 'yes' ||
-		( avada_is_portfolio_template() && get_post_meta($c_pageID, 'pyre_portfolio_width_100', true) == 'yes' ) ||
 		$page_template == '100-width.php'
 	) {
 		$main_css = 'padding-left:0px;padding-right:0px;';
