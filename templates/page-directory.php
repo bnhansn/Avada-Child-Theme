@@ -145,6 +145,10 @@ html,body{
   font-family: OpenSans-Semibold;
 }
 
+.sub_field {
+  cursor: pointer;
+}
+
 .nav-pills > li > .sub_field:hover{
   font-family: OpenSans-bold;
   background: none;
@@ -213,7 +217,7 @@ li.main_field{
 
  .search_container{
    float:right;
-   background: #F9F9F9;
+   background: #fff;
    border: .5px solid;
    border-color: #333333;
    border-radius: 1px;
@@ -222,7 +226,7 @@ li.main_field{
 
  }
  #search, #search:focus{
-   background: none;
+   background: #fff;
    border: none;
    outline: none
  }
@@ -233,10 +237,6 @@ li.main_field{
 
  .artist_modal_large{
    width: 70%;
- }
-
- .forward-page, .back-page{
-   padding-top: 70%;
  }
 
  @keyframes slidy {
@@ -353,6 +353,15 @@ div.artist-gallery figure {
   border: 8px solid #ffffff;;
 }
 
+.artist_post_content {
+  text-align: left;
+  cursor: pointer;
+  font-family: OpenSans-Light;
+  margin-bottom: 3rem;
+  color: #33353d;
+  display: block;
+}
+
 .social-icons{
   margin-top: .5%;
 }
@@ -446,6 +455,7 @@ div.artist-gallery figure {
 .category-post{
   font-size: 14.68px;
   line-height: 18px;
+  font-style: italic;
 }
 </style>
 <body>
@@ -467,36 +477,25 @@ div.artist-gallery figure {
 </div>
 </div>
 
-<div class="container search-bars">
-  <div class="row">
-   <div class="col-md-1"></div>
-    <div class="col-md-4">
-      <div class="azsearch">
-        <div id="display">0</div>
-        <div id="slider"></div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="search_container">
-        <input id="search" placeholder="Artist's Name"/>
-        <i class="fa fa-search search-icon"></i>
-      </div>
-    </div>
+<div class="container search-bars" style="display:flex;justify-content:flex-end">
+  <div class="search_container">
+    <input id="search" placeholder="Search"/>
+    <i class="fa fa-search search-icon"></i>
   </div>
 </div>
 
 <div class="container">
   <div class="row artists_query">
-  <div class="col-md-1">
-    <img class="back-page" src="/wp-content/plugins/artdirectory/assets/arrowlarge_left.png" style="cursor:pointer" />
+  <div class="col-md-1" style="text-align:center">
+    <img class="back-page" src="/wp-content/plugins/artdirectory/assets/arrowlarge_left.png" style="cursor:pointer;margin:20px 0" />
   </div>
   <div class="col-md-10">
   <div class="row artists">
 
 </div>
 </div>
-<div class="col-md-1">
-    <img class="forward-page" src="/wp-content/plugins/artdirectory/assets/arrowlarge_right.png" style="cursor:pointer" />
+<div class="col-md-1" style="text-align:center">
+  <img class="forward-page" src="/wp-content/plugins/artdirectory/assets/arrowlarge_right.png" style="cursor:pointer;margin:20px 0" />
 </div>
 </div>
 </div>
@@ -505,87 +504,72 @@ div.artist-gallery figure {
 
 <div class="modal fade" id="artist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog  artist_modal_large" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="padding:0">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
-
-      <div class="modal-body artist_modal">
+      <div class="modal-body artist_modal" style="padding:20px">
         <div class="row">
-
           <div class="col-md-6 artist-gallery col-md-push-6">
-            <div class="art-gal-itself" >
-            </div>
-
+            <div class="art-gal-itself"></div>
             <!-- Controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_left.png"/>
+              <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_left.png"/>
             </a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
               <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_right.png"/>
             </a>
-        </div>
-
+          </div>
           <div class="col-md-6 artist-info col-md-pull-6">
             <h3 class="artist-name">
-            	<span class="artist-first_name"></span>
-            	<span class="artist-last_name"></span>
+              <span class="artist-first_name"></span>
+              <span class="artist-last_name"></span>
             </h3>
-	    <div class="category-modal"></div>
+	          <div class="category-modal"></div>
             <div class="row">
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-md-12">
-                <div class="artist-contact">
-                  <h4>Contact Information</h4>
-
-
-
-                  <div class="artist-building"></div>
-                  <div class="artist-street"></div>
-                  <div>
-                  	<span class="artist-city"></span>,
-                  	<span class="artist-state"></span>
-                  	<span class="zip"></span>
+                    <div class="artist-contact">
+                      <h4>Contact Information</h4>
+                      <div class="artist-building"></div>
+                      <div class="artist-street"></div>
+                      <div>
+                        <span class="artist-city"></span>,
+                        <span class="artist-state"></span>
+                        <span class="zip"></span>
+                      </div>
+                      <div class="artist-phone"></div>
+                      <div class="artist-email"></div>
+                      <div class="artist-web"></div>
+                    </div>
                   </div>
-                  <div class="artist-phone"></div>
-                  <div class="artist-email"></div>
-                  <div class="artist-web"></div>
                 </div>
-              </div>
-              </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-12 social-icons">
-
+              <div class="col-md-12 social-icons"></div>
+            </div>
           </div>
         </div>
-            <div class="row">
-              <div class="col-md-12">
-                <h4 class="artist-state-h4">Artist Statment</h4>
-                <div class="artist-statement">
-                </div>
-                <h4 class="artist-additional-header artist-state-h4">
-                </h4>
-                <div class="artist-additional">
-                </div>
-              </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="artist-state-h4">Artist Statment</h4>
+            <div class="artist-statement">
+            </div>
+            <h4 class="artist-additional-header artist-state-h4">
+            </h4>
+            <div class="artist-additional">
             </div>
           </div>
-
-
-
+        </div>
         <div class="row">
-          <div class="container">
           <div class='col-sm-12 col-md-8'>
-              <div class="map_contains">
-              </div>
-          </div>
+            <div class="map_contains">
+            </div>
           </div>
         </div>
       </div>
-
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
