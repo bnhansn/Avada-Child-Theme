@@ -551,9 +551,10 @@ div.artist-gallery figure {
         </div>
         <div class="row">
           <div class="col-md-12">
+            <div class="artist-hours"></div>
+            <div class="artist-classes-offered"></div>
             <h4 class="artist-state-h4">Artist Statment</h4>
-            <div class="artist-statement">
-            </div>
+            <div class="artist-statement"></div>
             <h4 class="artist-additional-header artist-state-h4">
             </h4>
             <div class="artist-additional">
