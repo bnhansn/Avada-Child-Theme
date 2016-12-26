@@ -83,12 +83,6 @@ get_header("customheader"); ?>
   li.main_field {
     margin-bottom: 15px;
   }
-  .forward-page{
-    display: none;
-  }
-  .back-page{
-    display: none;
-  }
   .full-contain{
     margin-top: 65px;
   }
@@ -211,10 +205,6 @@ li.main_field{
    text-align: center;
  }
 
-.artists_query{
-  margin-top: 3%;
-}
-
  .search_container{
    float:right;
    background: #fff;
@@ -264,63 +254,9 @@ div.artist-gallery figure {
   transition: : slidy;
 }
 
-.gallery-item.active-gal{
-  display: inline-block;
-  transform: translateY(-2.2%);
-  width: 100% !important;
-  max-height: 100%;
-  overflow-y: hidden;teY(-50%);
-}
-
-.gallery-item{
-  display: none;
-  max-height: 100%;
-  max-width: 100%;
-  height: 100%;
-}
-
-.portrait{
-  height: 100%;
-}
-
-.gallery-item img{
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  max-height: 100%;
-  height: 250px;
-  width: 402px;
-}
-
-.search-bars{
-  margin-top: 5%;
-}
-
-.gallery{
-  padding: 0px;
-  background: #f5f4f6;
-  height: 290px;
-  width: 432px;
-  max-width: 100%;
-   /*
-  border: solid 20px;
-  border-color: #f5f4f6;
-  height: 402px; */
-}
-
-
 .modal-dialog{
   width: 90%;
   margin: auto;
-}
-
-.carousel-control.right{
-  margin-right: 9%;
-}
-
-.carousel-control.left{
-  margin-left: 9%;
 }
 
 .artist-contact{
@@ -422,9 +358,9 @@ div.artist-gallery figure {
   font-size: 28px;
 }
 
-.artist-state-h4{
-  margin-top: 3.33%;
-  margin-bottom: .33%;
+.artist-header {
+  margin-top: 30px;
+  margin-bottom: 10px;
   color: #33353d;
   font-family: OpenSans-Semibold;
   font-size: 22px;
@@ -452,49 +388,63 @@ div.artist-gallery figure {
   font-style: italic;
 }
 </style>
+
 <body>
-<div class="row directory_nav">
-  <div class="container directory_container">
-    <div class="row">
-      <h1 class="directory_header">Greenville-Area Arts Directory</h1>
-    </div>
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-pills main_fields center-pills">
-
-      </ul>
-      <ul class="nav nav-pills sub_fields center-pills">
-
-      </ul>
+  <div class="row directory_nav">
+    <div class="container directory_container">
+      <div class="row">
+        <h1 class="directory_header">Greenville-Area Arts Directory</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills main_fields center-pills"></ul>
+          <ul class="nav nav-pills sub_fields center-pills"></ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
-
-<div class="container search-bars" style="display:flex;justify-content:flex-end">
-  <div class="search_container">
-    <input id="search" placeholder="Search"/>
-    <i class="fa fa-search search-icon"></i>
+  <div style="margin:50px 0">
+    <div class="container">
+      <div class="directory-search">
+        <div class="search_container">
+          <input id="search" placeholder="Search"/>
+          <i class="fa fa-search search-icon"></i>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="row artists_query">
-  <div class="col-md-1" style="text-align:center">
-    <img class="back-page" src="/wp-content/plugins/artdirectory/assets/arrowlarge_left.png" style="cursor:pointer;margin:20px 0" />
+  <div class="container" style="margin-bottom:50px">
+    <div class="art-directory">
+      <div class="directory-arrow-col">
+        <button class="back-page directory-arrow-button">
+          <svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="circle-chevron-left" transform="translate(32.000000, 32.000000) scale(-1, 1) translate(-32.000000, -32.000000) translate(2.000000, 2.000000)">
+                <ellipse id="circle-left" class="chevron-circle" stroke="#905890" stroke-width="3" cx="30" cy="30" rx="30" ry="30"></ellipse>
+                <path d="M24.0769789,45 C23.5468304,45 23.0145544,44.8310165 22.6083845,44.4902977 C21.7972052,43.8114501 21.7972052,42.7128952 22.6083845,42.0340476 L36.9891204,30.0001214 L22.6083845,17.9653859 C21.7972052,17.2865382 21.7972052,16.1870122 22.6083845,15.5091357 C23.4195639,14.8302881 24.7334268,14.8302881 25.5444127,15.5091357 L41.3916155,28.7711061 C42.2027948,29.4499537 42.2027948,30.5494797 41.3916155,31.2273562 L25.5444127,44.4901359 C25.1395967,44.8300453 24.6082878,45 24.0769789,45 Z" id="chevron-left" fill="#905890"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <div class="directory-artists-col">
+        <div class="artists directory-content"></div>
+      </div>
+      <div class="directory-arrow-col">
+        <button class="forward-page directory-arrow-button">
+          <svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="circle-chevron-right" transform="translate(2.000000, 2.000000)">
+                <ellipse id="circle-right" class="chevron-circle" stroke="#905890" stroke-width="3" cx="30" cy="30" rx="30" ry="30"></ellipse>
+                <path d="M24.0769789,45 C23.5468304,45 23.0145544,44.8310165 22.6083845,44.4902977 C21.7972052,43.8114501 21.7972052,42.7128952 22.6083845,42.0340476 L36.9891204,30.0001214 L22.6083845,17.9653859 C21.7972052,17.2865382 21.7972052,16.1870122 22.6083845,15.5091357 C23.4195639,14.8302881 24.7334268,14.8302881 25.5444127,15.5091357 L41.3916155,28.7711061 C42.2027948,29.4499537 42.2027948,30.5494797 41.3916155,31.2273562 L25.5444127,44.4901359 C25.1395967,44.8300453 24.6082878,45 24.0769789,45 Z" id="chevron-right" fill="#905890"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
-  <div class="col-md-10">
-  <div class="row artists">
-
-</div>
-</div>
-<div class="col-md-1" style="text-align:center">
-  <img class="forward-page" src="/wp-content/plugins/artdirectory/assets/arrowlarge_right.png" style="cursor:pointer;margin:20px 0" />
-</div>
-</div>
-</div>
 </body>
-
 
 <div class="modal fade" id="artist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog  artist_modal_large" role="document">
@@ -506,13 +456,13 @@ div.artist-gallery figure {
         <div class="row">
           <div class="col-md-6 artist-gallery col-md-push-6">
             <div class="art-gal-container">
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_left.png"/>
-              </a>
               <div class="art-gal-itself"></div>
               <div class="art-gal-dots"></div>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/arrow_modal1_right.png"/>
+              <a class="left thumbnail-gallery-arrow thumbnail-gallery-arrow-left" href="#myCarousel" data-slide="prev">
+                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/gray-left-arrow.png"/>
+              </a>
+              <a class="right thumbnail-gallery-arrow thumbnail-gallery-arrow-right" href="#myCarousel" data-slide="next">
+                <img class="icon-next" src="/wp-content/plugins/artdirectory/assets/gray-right-arrow.png"/>
               </a>
             </div>
             <div class="art-gal-description"></div>
@@ -545,7 +495,15 @@ div.artist-gallery figure {
               </div>
             </div>
             <div class="row">
-              <div class="col-md-12 social-icons"></div>
+              <div class="col-md-12">
+                <div class="social-icons"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="open-friday" style="margin:10px 0"></div>
+                <div class="handicap-accessible"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -553,12 +511,10 @@ div.artist-gallery figure {
           <div class="col-md-12">
             <div class="artist-hours"></div>
             <div class="artist-classes-offered"></div>
-            <h4 class="artist-state-h4">Artist Statment</h4>
+            <h4 class="artist-statement-header artist-header"></h4>
             <div class="artist-statement"></div>
-            <h4 class="artist-additional-header artist-state-h4">
-            </h4>
-            <div class="artist-additional">
-            </div>
+            <h4 class="artist-additional-header artist-header"></h4>
+            <div class="artist-additional"></div>
           </div>
         </div>
         <div class="row">
